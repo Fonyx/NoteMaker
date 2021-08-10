@@ -34,6 +34,23 @@ const readAndAppend = (path, content) => {
     })
 }
 
+/**
+ * function that deletes the note with id argument
+ * @param {id} id uuid v4
+ */
+const deleteNoteFromFile = (id) => {
+    promiseReadFromFile('/db/db.json', 'w')
+    .then((err, stringData) => {
+        if(err){
+            console.error(err);
+        } else {
+            const parsedData = JSON.parse(stringData);
+            // filter out the note with the specific id
+            let result = parsedData.filter((note) => note.id !== id);
+            writeToJsonFile(result);
+        }
+    });
+}
 
 module.exports = {
     promiseReadFromFile,

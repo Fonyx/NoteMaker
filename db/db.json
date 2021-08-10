@@ -3,10 +3,15 @@
     "title": "Test Title",
     "text": "Test text",
     "id": "b9b1eef8-f9b1-11eb-9a03-0242ac130003"
-},
-{
+  },
+  {
     "title": "test note",
     "text": "Some test text",
     "id": "d20eac3e-f9b1-11eb-9a03-0242ac130003"
+  },
+  {
+    "title": "test note",
+    "text": "Some test text",
+    "id": "bc87ab2b-7637-426a-bc8f-6743ab9ddae8"
   }
 ]

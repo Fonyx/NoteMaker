@@ -1,5 +1,5 @@
 const notesRouter = require('express').Router();
-const { readAndAppend, promiseReadFromFile, deleteFromFile } = require('../helpers/file.js');
+const { readAndAppend, promiseReadFromFile, deleteNoteFromFile } = require('../helpers/file.js');
 const {v4: uuidv4} = require('uuid');
 
 // GET Route for retrieving all the notes
@@ -39,7 +39,22 @@ notesRouter.post('/', (req, res) => {
 
 // delete route for removing a note given an id
 notesRouter.delete('/', (req, res) => {
+
     let { id } = req.body;
+
+    if (id){
+        deleteNoteFromFile(id);
+        const response = {
+            status: 'removed',
+            body: id,
+        };
+        
+        res.json(response);
+    } else {
+        res.json(`Failed to delete note with id ${id}`)
+    }
+
+
 
 
 })
