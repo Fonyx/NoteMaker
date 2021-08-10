@@ -21,12 +21,12 @@ app.use(express.static('./public'));
 // get route for homepage
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
-})
+});
 
 // get route for homepage
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
-})
+});
 
 // Start the app
 app.listen(PORT, () =>

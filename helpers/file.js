@@ -17,12 +17,6 @@ const writeToJsonFile = (path, content) =>{
         err ? console.error(err) : console.info(`\nJson Data successfully written to ${path}`)
     );
 }
-/**
- * Promise version of write to json file
- * @param {string} path 
- * @param {jsonObject} content 
- */
-const promiseWriteToJsonFile = utils.promisify(writeToJsonFile);
 
 /**
  * function that reads content of a json file, appends a content object to the similar list, then saves
@@ -41,10 +35,9 @@ const readAndAppend = (path, content) => {
     })
 }
 
-const promiseReadAndAppend = utils.promisify(readAndAppend);
 
 module.exports = {
     promiseReadFromFile,
-    promiseWriteToJsonFile,
-    promiseReadAndAppend
+    writeToJsonFile, 
+    readAndAppend
 }
