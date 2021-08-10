@@ -38,11 +38,15 @@ notesRouter.post('/', (req, res) => {
 });
 
 // delete route for removing a note given an id
-notesRouter.delete('/', (req, res) => {
+notesRouter.delete('/:id', (req, res) => {
+    console.log(req.params);
 
-    let { id } = req.body;
+    // Check and see if there is a query parameter at all
+    const hasParams = Object.keys(req.params).length > 0;
 
-    if (id){
+    // handle delete if hasParams
+    if(hasParams){
+        let id = req.params.id;
         deleteNoteFromFile(id);
         const response = {
             status: 'removed',
@@ -50,8 +54,8 @@ notesRouter.delete('/', (req, res) => {
         };
         
         res.json(response);
-    } else {
-        res.json(`Failed to delete note with id ${id}`)
+    }else{
+        res.json(`Failed to delete note`);
     }
 
 

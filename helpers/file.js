@@ -1,5 +1,6 @@
 const fs = require('fs');
 const utils = require('util');
+const path = require('path');
 
 /**
  * make a promise version of fs.readFile since readFile is asynchronous but doesn't return a promise
@@ -14,7 +15,7 @@ const promiseReadFromFile = utils.promisify(fs.readFile);
 const writeToJsonFile = (path, content) =>{
     fs.writeFile(path, JSON.stringify(content, null, 2), (err) => 
         err ? console.error(err) : console.info(`\nJson Data successfully written to ${path}`)
-    );
+    ); 
 }
 
 /**
@@ -39,21 +40,21 @@ const readAndAppend = (path, content) => {
  * @param {id} id uuid v4
  */
 const deleteNoteFromFile = (id) => {
-    promiseReadFromFile('/db/db.json', 'w')
-    .then((err, stringData) => {
-        if(err){
-            console.error(err);
-        } else {
-            const parsedData = JSON.parse(stringData);
-            // filter out the note with the specific id
-            let result = parsedData.filter((note) => note.id !== id);
-            writeToJsonFile(result);
-        }
+    let dbPath = '../noteMaker/db/db.json';
+    promiseReadFromFile(dbPath, 'utf-8')
+    .then((stringData) => {
+        const parsedData = JSON.parse(stringData);
+        // filter out the note with the specific id
+        let result = parsedData.filter((note) => note.id !== id);
+        writeToJsonFile(dbPath, result);
+    }).catch((err) => {
+        console.error(err);
     });
 }
 
 module.exports = {
     promiseReadFromFile,
     writeToJsonFile, 
-    readAndAppend
+    readAndAppend,
+    deleteNoteFromFile
 }
