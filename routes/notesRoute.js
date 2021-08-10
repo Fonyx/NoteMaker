@@ -1,5 +1,5 @@
 const notesRouter = require('express').Router();
-const { readAndAppend, promiseReadFromFile } = require('../helpers/file.js');
+const { readAndAppend, promiseReadFromFile, deleteFromFile } = require('../helpers/file.js');
 const {v4: uuidv4} = require('uuid');
 
 // GET Route for retrieving all the notes
@@ -21,7 +21,7 @@ notesRouter.post('/', (req, res) => {
         const newNote = {
             title,
             text,
-            //noteId: uuidv4(),
+            id: uuidv4(),
         };
 
         readAndAppend('./db/db.json', newNote);
@@ -36,5 +36,12 @@ notesRouter.post('/', (req, res) => {
         res.json('Error in posting feedback');
     }
 });
+
+// delete route for removing a note given an id
+notesRouter.delete('/', (req, res) => {
+    let { id } = req.body;
+
+
+})
   
 module.exports = notesRouter;
