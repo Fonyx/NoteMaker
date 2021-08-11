@@ -40,7 +40,7 @@ const readAndAppend = (path, content) => {
  * @param {id} id uuid v4
  */
 const deleteNoteFromFile = (id) => {
-    let dbPath = '../noteMaker/db/db.json';
+    let dbPath = './db/db.json';
     promiseReadFromFile(dbPath, 'utf-8')
     .then((stringData) => {
         const parsedData = JSON.parse(stringData);
