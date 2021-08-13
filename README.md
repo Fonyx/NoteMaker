@@ -10,7 +10,7 @@
 
 A Node.js note taking app deployed to heroku @ https://warm-crag-15429.herokuapp.com/ 
 
-![Alt text](https://github.com/Fonyx/NoteMaker/blob/main/assets/images/screenshot.PNG?raw=true "project screenshot")  
+![Alt text](https://github.com/Fonyx/NoteMaker/blob/main/Assets/images/screenshot.PNG?raw=true "project screenshot")  
 
 ## License
 
@@ -64,7 +64,7 @@ MIT License
 
 ## Video
 
-![Screenshot](https://github.com/Fonyx/NoteMaker/blob/main/assets/images/screencap.gif?raw=true "usage screencap")  
+![Screenshot](https://github.com/Fonyx/noteMaker/blob/main/assets/images/screencap.gif?raw=true "usage screencap")  
 
 ## Contributors 
 
