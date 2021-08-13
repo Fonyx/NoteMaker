@@ -1,14 +1,14 @@
 {
-  "name": "note-taker",
+  "name": "noteMaker",
   "version": "1.0.0",
-  "description": "",
+  "description": "A node.Js note taking app deployed to heroku",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "jest --coverage"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Fonyx",
+  "license": "MIT License",
   "dependencies": {
     "express": "^4.16.4",
     "uuid": "^8.3.2"

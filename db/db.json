@@ -5,8 +5,13 @@
     "id": "b9b1eef8-f9b1-11eb-9a03-0242ac130003"
   },
   {
-    "title": "Another test note",
-    "text": "Just some text",
-    "id": "7035ec4c-8ba2-4b47-a1ce-a6a2f977195a"
+    "title": "New Note",
+    "text": "Some test text for the note",
+    "id": "b5708f90-efff-4d58-900d-b29ce96ca6c4"
+  },
+  {
+    "title": "Another note",
+    "text": "Don't forget to do that thing",
+    "id": "d1ef146f-595c-4b5c-860f-13580c7f178c"
   }
 ]
